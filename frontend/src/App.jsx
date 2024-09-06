@@ -36,7 +36,7 @@ import EditPost from "./pages/EditPost";
 import PostDetail from "./pages/PostDetail";
 //import UserList from "./pages/UserList";
 import NotFound from "./pages/NotFound";
-
+import BookingStats from "./components/BookingStats";
 
 // Definisco il componente principale App
 function App() {
@@ -71,6 +71,7 @@ function App() {
             {/*<Route path="/users" element={<ProtectedRoute element={UserList} adminOnly />}/>*/}
             {/* Rotte per la gestione degli ombrelloni */}
             <Route path="/umbrellas" element={<UmbrellaManager />} />
+            <Route path="/bookings/status" element={<BookingStats />} />
             <Route path="/create-umbrella" element={<CreateUmbrella />} /> {/* Rotta per creare un nuovo ombrellone */}
             {/* Rotta per la navigazione alla pagina 404 */}
             <Route path="*" element={<NotFound />} />

@@ -36,6 +36,7 @@ const NavbarComponent = () => {
               <Nav.Link as={Link} to="/create" onClick={handleLinkClick}>Create Post</Nav.Link>
               <Nav.Link as={Link} to="/umbrellas" onClick={handleLinkClick}>Umbrellas</Nav.Link>
               {isAdmin() && <>
+                <Nav.Link as={Link} to="/bookings/status" onClick={handleLinkClick}>Booking Status</Nav.Link>
                 <Nav.Link as={Link} to="/register" onClick={handleLinkClick}>Register Users</Nav.Link>
               </>}
             </>}

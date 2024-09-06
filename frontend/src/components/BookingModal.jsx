@@ -110,6 +110,7 @@ const [formData, setFormData] = useState({
     }
   
     const sunbedsPrice = sunbeds * 5;
+    console.log("Sunbeds Price:", sunbedsPrice);
     const totalPrice = parseFloat(price) + sunbedsPrice;
     const balance = totalPrice - parseFloat(deposit);
   
@@ -138,7 +139,9 @@ const [formData, setFormData] = useState({
         console.log("Aggiornamento prenotazione...");
         const updatedBookingData = await updateBooking(umbrellaId, booking._id, updatedBooking);
         console.log("Risultato aggiornamento prenotazione:", updatedBookingData);  // Dovrebbe mostrare i dati corretti
-        onBookingUpdated(updatedBookingData);
+        if (updatedBookingData) {
+          onBookingUpdated(updatedBookingData);
+        }
       }
     onHide();
       } catch (error) {

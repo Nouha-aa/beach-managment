@@ -215,10 +215,14 @@ export const getMe = () =>
     throw error;
   }
 },
+
+getBookingStats: () => axios.get(`${API_URL}/umbrellas/bookings/stats`),
   
     // Eliminare una prenotazione
     deleteBooking: (umbrellaId, bookingId) => 
       axios.delete(`${API_URL}/umbrellas/${umbrellaId}/bookings/${bookingId}`),
   };
+
+  
   
   export default api;

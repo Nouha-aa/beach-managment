@@ -26,7 +26,6 @@ const Sidebar = ({ umbrella, onClose, onUpdateUmbrella }) => {
   const handleBookingClick = () => {
     setSelectedBooking(null);
     setShowBookingModal(true);
-    resetFormData();
   };
 
   const handleBookingEditClick = (booking) => {

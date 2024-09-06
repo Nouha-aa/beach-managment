@@ -26,15 +26,15 @@ const PaymentSummary = ({ umbrella, bookings }) => {
   // Calcola il saldo totale
   const bookingSummary = bookings.map(booking => {
     const totalDays = calculateDaysDifference(booking.startDate, booking.endDate);
-    const totalPrice = calculateTotalPrice(booking);
-    const balance = totalPrice - booking.deposit;
-    const isPaid = balance <= 0;
+    //const totalPrice = calculateTotalPrice(booking);
+    //const balance = totalPrice - booking.deposit;
+    const isPaid = booking.balance <= 0;
 
     return {
       ...booking,
       totalDays,
-      totalPrice,
-      balance,
+      //totalPrice,
+      //balance,
       isPaid,
       sunbeds: booking.additionalServices?.sunbeds || 0
     };

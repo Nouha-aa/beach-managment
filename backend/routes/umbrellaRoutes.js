@@ -3,6 +3,7 @@ import Umbrella from "../models/Umbrella.js";
 //import upload from "../middlewares/upload.js"; // Import nuovo Middleware per upload (NO CLOUDINARY)
 import cloudinaryUploader from "../config/claudinaryConfig.js"; // Import dell'uploader di Cloudinary (CON CLOUDINARY)
 import upload from '../middlewares/upload.js';
+import { calculateDaysDifference } from "../utils/calculateDaysDifference.js";
 
 // import controlloMail from "../middlewares/controlloMail.js"; // NON USARE - SOLO PER DIDATTICA - MIDDLEWARE (commentato)
 
@@ -47,6 +48,58 @@ router.get("/", async (req, res) => {
 
     // Invia la lista degli ombrelloni come risposta JSON
     res.json(umbrellaStatusList);
+  } catch (err) {
+    // In caso di errore, invia una risposta di errore
+    res.status(500).json({ message: err.message });
+  }
+});
+
+router.get("/bookings", async (req, res) => {
+  try {
+    const umbrellas = await Umbrella.find({});
+    //console.log('Umbrellas:', umbrellas);
+    // Calcola lo stato corrente per ogni ombrellone
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    //console.log('Today:', today);
+
+    const bookings = umbrellas.flatMap(umbrella => umbrella.bookings);
+    // const bookings = {...umbrellas.map(umbrella => umbrella.bookings)};
+
+    // Invia la lista degli ombrelloni come risposta JSON
+    res.json(bookings);
+  } catch (err) {
+    // In caso di errore, invia una risposta di errore
+    res.status(500).json({ message: err.message });
+  }
+});
+
+router.get("/bookings/stats", async (req, res) => {
+  try {
+    const umbrellas = await Umbrella.find({});
+    //console.log('Umbrellas:', umbrellas);
+    // Calcola lo stato corrente per ogni ombrellone
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    //console.log('Today:', today);
+
+    const bookings = umbrellas.flatMap(umbrella => umbrella.bookings);
+    const totalPrice = bookings.reduce((acc, booking) => {
+      return acc + +booking.totalPrice;
+    }, 0);
+
+    const totalUnsolved = bookings.filter(booking => booking.totalPrice !== booking.balance).reduce((acc, booking) => {
+      return acc + +booking.balance;
+    }, 0);
+
+
+    // Invia la lista degli ombrelloni come risposta JSON
+    res.json({
+      totalBookings: bookings.length,
+      totalPrice: totalPrice,
+      unsolvedPrice: totalUnsolved,
+
+    });
   } catch (err) {
     // In caso di errore, invia una risposta di errore
     res.status(500).json({ message: err.message });
@@ -233,10 +286,8 @@ router.post("/:id/booking", async (req, res) => {
     const sunbeds = additionalServices.sunbeds || 0;
     const sunbedsPrice = sunbeds * 5;  // Assumi 5 euro per lettino
 
-  
-
     // Calcola il prezzo totale
-    const totalPrice = price + sunbedsPrice;
+    const totalPrice = (price + sunbedsPrice) * calculateDaysDifference(startDate, endDate);
     const balance = totalPrice - deposit;
 
     // Crea una nuova prenotazione
@@ -311,9 +362,11 @@ router.patch("/:id/bookings/:bookingId", async (req, res) => {
     if (req.body.price !== undefined || req.body.additionalServices) {
       const sunbedsQuantity = req.body.additionalServices?.sunbeds || booking.additionalServices.sunbeds;
       const sunbedsPrice = sunbedsQuantity * 5;
-      booking.totalPrice = (req.body.price !== undefined ? req.body.price : booking.price) + sunbedsPrice;
+      booking.totalPrice = ((req.body.price !== undefined ? req.body.price : booking.price) + sunbedsPrice) * 
+        calculateDaysDifference((req.body.startDate !== undefined ? req.body.startDate : booking.startDate), (req.body.endDate !== undefined ? req.body.endDate : booking.endDate));
       booking.additionalServices.sunbeds = sunbedsQuantity;
       booking.additionalServicesPrice.sunbeds = sunbedsPrice;
+      booking.balance = booking.totalPrice - booking.deposit;
     }
 
     await umbrella.save();
