@@ -64,7 +64,7 @@ function Login() {
                   className="surfboard-image"
                 />
                 <Form.Group controlId="formBasicPassword">
-                <label htmlFor="formBasicPassword" className="password-label">Password</label>
+                <label htmlFor="formBasicPassword" className="password-label">Passwordd</label>
                   <Form.Control
                     type="password"
                     value={password}
