@@ -1,0 +1,89 @@
+.login-container {
+    background-image: url('/images/beach-wallpaper.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .login-card {
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.31);
+    text-align: center;
+    width: 100%;
+    max-width: 100%; /* valore per rendere la card più larga */
+    min-width: 300px;
+    box-sizing: border-box;
+  }
+  
+  .input-wrapper {
+    margin-bottom: 20px;
+  }
+  
+  .surfboard-container {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    height: 100px; /* Regola l'altezza del container per adattarla all'immagine della tavola da surf */
+  }
+  
+  .surfboard-image {
+    position: absolute;
+    height: 100%;
+    max-width: 100%;
+    z-index: 1;
+    opacity: 0.9;
+  }
+  
+  .email-input, .password-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    z-index: 2;
+    
+    opacity: 0.8;
+    color: black;
+  }
+  
+  /* Regola il colore del testo */
+  .password-label, .email-label, .header-text {
+    position: relative;
+    color: #8b5f29;
+    font-weight: bold;
+    opacity: 1; 
+    z-index: 3; 
+  }
+
+  button.login-button {
+    background-color: #9d6b2d95;
+    border-radius: 15px;
+    border: 2px solid #60411b95;
+  }
+
+  button.login-button:hover {
+    background-color: #9d6b2d;
+    border: 2px solid #60411b95;
+  }
+
+  /* Media Queries per la responsività */
+  @media (max-width: 576px) {
+    .login-card {
+      padding: 15px;
+      min-width: 100%; /* Imposta la larghezza minima al 100% per schermi piccoli */
+    }
+
+    .surfboard-container {
+      height: auto; /* Rimuovi altezza fissa */
+    }
+
+    .surfboard-image {
+      max-height: 80px; /* Riduci l'altezza massima su schermi piccoli */
+    }
+  }

@@ -1,0 +1,84 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr) 1fr repeat(8, 1fr); /* 8 colonne a sinistra, 1fr per la passerella, 8 a destra */
+    gap: 8px;
+    grid-auto-rows: 60px;
+  }
+
+  /* Wrapper per la griglia */
+.grid-wrapper {
+  display: block; /* Impedisce comportamenti in linea */
+  min-width: 100%; /* Assicura che lo scroll orizzontale funzioni */
+}
+  
+  /* Contenitore scrollabile */
+.scroll-container {
+  max-height: 80vh; /* Limita l'altezza massima per consentire lo scroll verticale */
+  max-width: 100%; /* Limita la larghezza massima per consentire lo scroll orizzontale */
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+  
+  .grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .grid-item .umbrella-number {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: rgba(255, 255, 255, 0.7); /* Sfondo semi-trasparente per migliorare la leggibilità */
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .grid-item.not-registred {
+    background-color: #ffdddd;
+  }
+  
+  .grid-item.registred {
+    background-color: #ffdddd;
+  }
+
+  .grid-item.passerella {
+    background-image: none; /* Nessuna immagine di sfondo per la passerella */
+    border: 1px solid #1172a2;
+  }
+  
+  .grid-item.center {
+    background-color: #cccccc; /* Colore diverso per la passerella */
+    pointer-events: none; /* Disabilita il clic sulla passerella */
+    grid-column: span 1; /* Occupa una colonna centrale indipendente */
+    background-image: none;
+  }
+  
+  .status {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    font-size: 14px;
+  }
+  
+  .status.occupato {
+    color: red;
+  }
+  
+  .status.libero {
+    color: green;
+  }
+  
+  

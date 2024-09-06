@@ -1,0 +1,75 @@
+.register-page {
+  background-image: url('/images/Stock.jpeg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.register-page .container {
+  width: 100%;
+  max-width: 1200px; /* Increased from 800px */
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.register-card {
+  margin-bottom: 20px;
+}
+
+.user-list-card {
+  max-height: 600px; /* Increased from 500px */
+  overflow-y: auto;
+}
+
+button.register-button {
+  background-color: #af402a;
+  border-radius: 15px;
+  color: aliceblue;
+  border: 1px solid #c0412795;
+}
+
+button.register-button:hover {
+  background-color: #e2c757;
+  border: 1px solid #cda82395;
+}
+
+/* Responsive adjustments */
+@media (min-width: 1200px) {
+  .register-page .container {
+    max-width: 1400px; /* Even wider on very large screens */
+  }
+}
+
+@media (max-width: 1199px) {
+  .register-page .container {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 991px) {
+  .register-page .container {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 767px) {
+  .register-page .container {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .register-page .container {
+    padding: 5px;
+  }
+}
