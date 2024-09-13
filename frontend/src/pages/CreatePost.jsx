@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { createPost, getUserData } from "../services/api";
 import { Form, Button, Card, Alert } from "react-bootstrap";
+import "./CreatePost.css";
 
 // Funzione per creare un nuovo post
 export default function CreatePost() {
@@ -88,13 +89,13 @@ export default function CreatePost() {
   };
 
   return (
-    <div className="container mx-auto max-w-2xl p-4">
-      <h1 className="text-3xl font-bold text-center mb-6">Create Post</h1>
-      <Card>
+    <div className="create-post-page container-fluid p-4">
+      <h2 className="testo-card text-3xl font-bold text-center mb-6">Crea Nuovo Evento</h2>
+      <Card className="card px-4">
         <Card.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="title">
-              <Form.Label>Title</Form.Label>
+              <Form.Label>Titolo:</Form.Label>
               <Form.Control
                 type="text"
                 name="title"
@@ -105,7 +106,7 @@ export default function CreatePost() {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="category">
-              <Form.Label>Category</Form.Label>
+              <Form.Label>Luogo:</Form.Label>
               <Form.Control
                 type="text"
                 name="category"
@@ -116,7 +117,7 @@ export default function CreatePost() {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="content">
-              <Form.Label>Content</Form.Label>
+              <Form.Label>Contenuto:</Form.Label>
               <Form.Control
                 as="textarea"
                 name="content"
@@ -128,7 +129,7 @@ export default function CreatePost() {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="cover">
-              <Form.Label>Post Image</Form.Label>
+              <Form.Label>Immagine di copertina:</Form.Label>
               <Form.Control
                 type="file"
                 name="cover"
@@ -138,7 +139,7 @@ export default function CreatePost() {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="readTimeValue">
-              <Form.Label>Reading Time (minutes)</Form.Label>
+              <Form.Label>Tempo di lettura (minutes):</Form.Label>
               <Form.Control
                 type="number"
                 min="1"
@@ -150,7 +151,7 @@ export default function CreatePost() {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="author">
-              <Form.Label>Author Email</Form.Label>
+              <Form.Label>Author Email:</Form.Label>
               <Form.Control
                 type="email"
                 name="author"
@@ -166,7 +167,7 @@ export default function CreatePost() {
               </Alert>
             )}
 
-            <Button variant="primary" type="submit" className="w-100">
+            <Button type="submit" className="save-button w-50">
               Save Post
             </Button>
           </Form>

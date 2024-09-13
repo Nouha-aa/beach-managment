@@ -222,7 +222,7 @@ const [formData, setFormData] = useState({
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Deposito</Form.Label>
+            <Form.Label>Importo Versato</Form.Label>
             <Form.Control
               type="number"
               name="deposit"

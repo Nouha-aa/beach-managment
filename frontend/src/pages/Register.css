@@ -1,7 +1,5 @@
 .register-page {
-  background-image: url('/images/Stock.jpeg');
-  background-size: cover;
-  background-position: center;
+  background-color: rgba(221, 153, 63, 0.396);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -32,15 +30,19 @@
 }
 
 button.register-button {
-  background-color: #af402a;
+  background-color: rgba(221, 153, 63, 0.469);
   border-radius: 15px;
-  color: aliceblue;
-  border: 1px solid #c0412795;
+  color: white;
+  border: 1px solid #e8c69095;
 }
 
 button.register-button:hover {
-  background-color: #e2c757;
+  background-color: #c6850c;
   border: 1px solid #cda82395;
+}
+
+.title {
+  color: #c6850c;
 }
 
 /* Responsive adjustments */

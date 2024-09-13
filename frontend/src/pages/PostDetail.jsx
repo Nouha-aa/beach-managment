@@ -74,7 +74,7 @@ if (!post) {
             <div className="post-meta text-muted mb-4">
               <div className="d-flex align-items-center mb-2">
                 <FaTags className="me-2" />
-                <span>Categoria: {post.category}</span>
+                <span>Luogo: {post.category}</span>
               </div>
               <div className="d-flex align-items-center mb-2">
                 <FaUser className="me-2" />

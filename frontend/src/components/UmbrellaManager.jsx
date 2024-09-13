@@ -44,20 +44,6 @@ const UmbrellaManager = () => {
 
   return (
     <div className="umbrella-manager-container">
-      <div className="background-gif" 
-           style={{
-             backgroundImage: "url('/images/background.gif')",
-             backgroundSize: 'cover',
-             backgroundPosition: 'center',
-             backgroundRepeat: 'no-repeat',
-             position: 'absolute',
-             top: 0,
-             left: 0,
-             right: 0,
-             bottom: 0,
-             zIndex: -1
-           }}
-      />
       <div className="content">
         <UmbrellaGrid />
       </div>

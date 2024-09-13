@@ -4,10 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { getPosts, deletePost, getUserData } from "../services/api";
 import Notification from '../components/Notification.jsx';
 import EditPost from "./EditPost.jsx";
-import { Button, Card, Spinner, Container, Row, Col } from 'react-bootstrap';
-import { motion } from "framer-motion";
+import { Button, Spinner, Container, Row, Col } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext';
-
+import Hero from '../sub-components/Hero.jsx';
+import './Home.css';
 // componente home con post per eventi
 export default function Home({ search, viewMyPosts }) {
   const { loggedIn, author, setLoggedIn, setAuthor } = useAuth();
@@ -102,52 +102,46 @@ export default function Home({ search, viewMyPosts }) {
     <div className="relative overflow-hidden bg-light min-vh-100">
       <div className="position-absolute w-100 h-100" style={{ zIndex: 0 }}>
       </div>
+      <Hero />
       <Container className="d-flex flex-column align-items-center justify-content-center p-4" style={{ zIndex: 10 }}>
-        <h1 className="mb-6 text-4xl font-extrabold text-dark shadow-lg">{viewMyPosts ? "My Posts" : "Events"}</h1>
+        <h3 className="mb-6 text-4xl font-extrabold text-dark shadow-lg">{viewMyPosts ? "My Posts" : "Eventi in zona"}</h3>
         {notification && (
           <Notification message={notification} onClose={() => setNotification(null)} />
         )}
         <Row className="g-4">
           {filterPosts(posts).map((post) => (
-            <Col sm={6} md={4} lg={3} key={post._id}>
-              <motion.div
-                whileHover={{ scale: 1.03, boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.2)" }}
-                transition={{ duration: 0.2 }}
-                className="overflow-hidden rounded-lg bg-white text-black"
-              >
+            <Col sm={6} md={6} lg={4} key={post._id}>
+              <div className="custom-card p-0">
                 <Link to={`/post/${post._id}`} className="text-decoration-none">
-                  <Card className="h-100">
-                    <Card.Img variant="top" src={post.cover} alt={post.title} className="h-48 object-cover" />
-                    <Card.Body>
-                      <Card.Title className="text-dark">{post.title}</Card.Title>
-                      <Card.Text className="text-muted">
-                        Autore: {post.author}
-                      </Card.Text>
-                      {loggedIn && currentUser && currentUser.email === post.author && (
-                        <div className="d-flex gap-2 mt-2">
-                          <Button 
-                            size="sm" 
-                            variant="outline-success" 
-                            className="flex-grow-1"
-                            onClick={(e) => handleEditPost(post._id, e)}
-                          >
-                            Edit
-                          </Button>
-                          <Button 
-                            size="sm" 
-                            variant="outline-danger" 
-                            className="flex-grow-1"
-                            onClick={(e) => handleDeletePost(post._id, e)}
-                          >
-                            Delete
-                          </Button>
-                        </div>
-                      )}
-                    </Card.Body>
-                  </Card>
+                  <div className="card-img-container">
+                    <img src={post.cover} alt={post.title} className="card-img-top" />
+                  </div>
+                  <div className="card-body text-center info">
+                    <h3 className="card-title text-light">{post.title}</h3>
+                    <h6 className="card-text text-light">Luogo: {post.category}</h6>
+                  </div>
                 </Link>
-                {editPostId && <EditPost postId={editPostId} onUpdate={handlePostUpdate} onClose={handleCloseEditModal} />}
-              </motion.div>
+                {loggedIn && currentUser && currentUser.email === post.author && (
+                  <div className="button-container">
+                  <Button
+                    size="sm"
+                    variant="outline-success"
+                    onClick={(e) => handleEditPost(post._id, e)}
+                  >
+                    Edit
+                  </Button>
+                  <Button
+                    className="secondo-button"
+                    size="sm"
+                    variant="outline-danger"
+                    onClick={(e) => handleDeletePost(post._id, e)}
+                  >
+                    Delete
+                  </Button>
+                </div>
+                )}
+              </div>
+              {editPostId && <EditPost postId={editPostId} onUpdate={handlePostUpdate} onClose={handleCloseEditModal} />}
             </Col>
           ))}
         </Row>
@@ -156,3 +150,4 @@ export default function Home({ search, viewMyPosts }) {
     </>
   );
 }
+

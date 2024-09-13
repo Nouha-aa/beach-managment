@@ -70,7 +70,7 @@ const PaymentSummary = ({ umbrella, bookings }) => {
                   <div>
                     <strong>Totale: €{booking.totalPrice.toFixed(2)}</strong>
                     <br />
-                    Deposito: €{booking.deposit.toFixed(2)}
+                    Imorto versato: €{booking.deposit.toFixed(2)}
                     <br />
                     Saldo: €{booking.balance.toFixed(2)}
                   </div>

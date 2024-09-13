@@ -17,7 +17,7 @@
 }
 
 button.delete-button {
-  background-color: #af402a;
+  background-color: rgba(221, 153, 63, 0.469);
   color: white;
   border: none;
   padding: 5px 10px;
@@ -27,7 +27,12 @@ button.delete-button {
 }
 
 button.delete-button:hover {
-  background-color: #e2c757;
+  background-color: #c6850c;
+  color : white;
+}
+
+.titolo {
+  color: #c6850c;
 }
 
 @media (max-width: 576px) {

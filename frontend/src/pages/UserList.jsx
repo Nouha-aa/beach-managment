@@ -46,7 +46,7 @@ function UserList({ token, updateTrigger }) {
         <div className="row">
           <div className="col-12">
             <div className="card p-4">
-              <h2 className="text-center mb-4">Lista degli utenti</h2>
+              <h2 className="titolo text-center mb-4">Lista degli utenti</h2>
               <ul className="user-list">
                 {users.map(user => (
                   <li key={user._id} className="user-list-item">

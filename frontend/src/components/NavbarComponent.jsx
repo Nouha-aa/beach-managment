@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+import { Navbar, Nav, Container, Button, DropdownButton, Dropdown } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext';
+import { FaUserCircle } from "react-icons/fa";
+import './NavbarComponent.css'; // Aggiunta del file CSS
 
 const NavbarComponent = () => {
   const { handleLogout, loggedIn, user, isAdmin } = useAuth();
   const navigate = useNavigate();
-  
-  // Stato per gestire l'apertura/chiusura della navbar
+
   const [expanded, setExpanded] = useState(false);
 
   const logout = async () => {
@@ -19,18 +20,19 @@ const NavbarComponent = () => {
     }
   };
 
-  // Funzione per chiudere la navbar
   const handleLinkClick = () => {
     setExpanded(false);
   };
 
   return (
-    <Navbar bg="light" expand="lg" expanded={expanded}>
+    <Navbar expand="lg" expanded={expanded} className="custom-navbar">
       <Container>
-        <Navbar.Brand as={Link} to="/" onClick={handleLinkClick}>Beach App</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/" onClick={handleLinkClick} className="mx-auto navbar-center">
+          Beach App
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)} />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto left-nav">
             <Nav.Link as={Link} to="/" onClick={handleLinkClick}>Home</Nav.Link>
             {loggedIn && <>
               <Nav.Link as={Link} to="/create" onClick={handleLinkClick}>Create Post</Nav.Link>
@@ -41,13 +43,24 @@ const NavbarComponent = () => {
               </>}
             </>}
           </Nav>
-          <Nav>
+          <Nav className="right-nav">
             {loggedIn ? (
               <>
-                <Navbar.Text className="me-2">
-                  Signed in as: {user.email}
-                </Navbar.Text>
-                <Button variant="outline-primary" onClick={logout}>Logout</Button>
+              <div className="d-flex align-items-center">
+                <DropdownButton
+                  bg="transparent"
+                  align="end" 
+                  id="drop"
+                  title={<FaUserCircle />}      
+                >
+                  <Dropdown.Item disabled="true">Hello, {user.nome}!</Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Dropdown.Item disabled="true">Signed in as:</Dropdown.Item>
+                  <Dropdown.Item disabled="true">{user.email}</Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Button id="logout" size="sm" onClick={logout}>Logout</Button>
+                </DropdownButton>
+              </div>
               </>
             ) : (
               <>
@@ -62,3 +75,4 @@ const NavbarComponent = () => {
 };
 
 export default NavbarComponent;
+

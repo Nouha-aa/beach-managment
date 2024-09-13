@@ -45,10 +45,10 @@ export const AuthProvider = ({ children }) => {
       setLoggedIn(true);
       if (response.user.isAdmin) {
         console.log('Reindirizzamento a /umbrellas');
-        navigate('/umbrellas');
+        navigate('/bookings/status');
       } else {
         console.log('Reindirizzamento a /');
-        navigate('/');
+        navigate('/umbrellas');
       }
     } catch (error) {
       console.error('AuthContext: Errore durante il login', error);

@@ -128,7 +128,7 @@ const UmbrellaGrid = () => {
   const displayUmbrellas = Object.keys(filteredUmbrellas).length > 0 ? filteredUmbrellas : positionUmbrellas();
 
   return (
-    <div className="container mt-4">
+    <div className="container-fluid mt-4">
       <SearchAvailability 
         onSearch={handleSearch} 
         onClear={handleClearSearch}

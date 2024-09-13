@@ -1,0 +1,28 @@
+.create-post-page {
+    background-color: rgba(221, 153, 63, 0.396);
+}
+
+.save-button {
+    background-color: rgba(221, 153, 63, 0.469);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-button:hover {
+    background-color: #c6850c;
+}
+
+.card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px 10px rgba(62, 47, 3, 0.175);
+    margin-bottom: 300px;
+  }
+
+.testo-card {
+    color: white;
+}

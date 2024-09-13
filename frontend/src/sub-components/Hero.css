@@ -1,0 +1,11 @@
+.hover-carousel .carousel-item {
+    height: 40vh;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .hover-carousel .carousel-caption {
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+  

@@ -1,0 +1,64 @@
+/* Navbar distanziata di 8px dal top */
+.custom-navbar {
+    background-color: rgba(221, 153, 63, 0.635);
+    padding: 5px 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Stile per il logo (nome al centro) */
+  .navbar-center {
+    font-weight: bold;
+    color: white;
+    font-size: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Link della navbar */
+  .left-nav .nav-link, .right-nav .nav-link {
+    color: white;
+    margin-right: 15px;
+    font-weight: bolder;
+  }
+
+  .nav-link:hover {
+    background-color: rgba(221, 153, 63, 0.635);
+    border-radius: 10px;
+    transition: all 0.8s ease;
+  }
+  
+  .navbar-text {
+    color: rgb(251, 251, 251);
+  }
+  
+  /* Quando la navbar si collassa, il logo torna a sinistra */
+  @media (max-width: 992px) {
+    .navbar-center {
+      left: 0;
+      transform: none;
+    }
+  }
+
+  #drop {
+    background: transparent;
+    border: none;
+  }
+
+  #logout {
+    background: transparent;
+    font-size: medium;
+    font-weight: bolder;
+    border: none;
+    border: 1px solid rgba(221, 153, 63, 0.635);
+    color: rgba(221, 153, 63, 0.635);
+    transition: all 0.3s ease;
+    margin-left: 32%;
+  }
+
+  #logout:hover {
+    background: rgba(220, 158, 76, 0.635);
+    color: white;
+    border: none;
+    border: 1px solid rgba(221, 153, 63, 0.635);
+  }
+  

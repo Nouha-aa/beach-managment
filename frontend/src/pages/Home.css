@@ -1,0 +1,89 @@
+.custom-card .card-img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .custom-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .custom-card:hover .card-img-top {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .info {
+    background-color: rgba(221, 153, 63, 0.635);
+    box-shadow:10px 10px 100px rgba(0, 0, 0, 0.801);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .custom-card:hover .info {
+    opacity: 1;
+    overflow: auto;
+  }
+
+  /* Container dei bottoni */
+.button-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    display: flex;
+    gap: 13px;
+    opacity: 0; /* Nasconde i bottoni di default */
+    transition: opacity 0.3s ease-in-out; /* Transizione di comparsa */
+  }
+  
+  /* Mostra i bottoni all'hover */
+  .custom-card:hover .button-container {
+    opacity: 1; /* I bottoni appaiono all'hover */
+  }
+  
+  /* Stile dei bottoni */
+  .button-container button {
+    /* background-color: rgba(93, 55, 55, 0.6); */
+    background-color: rgba(221, 153, 63, 0.635);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button-container button:hover {
+    background-color: #f0f0f0;
+    color: rgba(69, 199, 164, 0.6);
+    font-weight: bolder;
+    transition: transform 0.6s ease-in-out;
+    transform: scale(1.1);
+  }
+
+  .button-container button.secondo-button {
+    background-color: rgba(221, 153, 63, 0.635);
+  }
+
+  .button-container button.secondo-button:hover {
+    color: rgba(238, 78, 78, 0.666);
+    background-color: #ffffff;
+  }
+
+ 
