@@ -44,7 +44,7 @@ const PaymentSummary = ({ umbrella, bookings }) => {
 
   return (
     <>
-      <Button variant="primary" onClick={() => setShowModal(true)}>
+      <Button className="no-radius" variant="primary" onClick={() => setShowModal(true)}>
         Riepilogo Pagamenti
       </Button>
 

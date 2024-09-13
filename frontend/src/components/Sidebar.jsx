@@ -99,7 +99,7 @@ const Sidebar = ({ umbrella, onClose, onUpdateUmbrella }) => {
             umbrellaId={umbrella?._id}
             onSave={handleSave}
             />
-            <Button variant="primary" onClick={() => setShowNewBookingModal(true)}>
+            <Button className='mt-4' variant="primary" onClick={() => setShowNewBookingModal(true)}>
                 Effettua prenotazione
             </Button>
           </>

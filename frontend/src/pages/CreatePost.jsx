@@ -89,90 +89,92 @@ export default function CreatePost() {
   };
 
   return (
-    <div className="create-post-page container-fluid p-4">
-      <h2 className="testo-card text-3xl font-bold text-center mb-6">Crea Nuovo Evento</h2>
-      <Card className="card px-4">
-        <Card.Body>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="title">
-              <Form.Label>Titolo:</Form.Label>
-              <Form.Control
-                type="text"
-                name="title"
-                value={post.title}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
+    <div className='w-100 vh-100 create-post-page'>
+      <div className="container p-4">
+        <h2 className="testo-card text-3xl font-bold text-center mb-6">Crea Nuovo Evento</h2>
+        <Card className="card px-4 post-card">
+          <Card.Body>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group className="mb-3" controlId="title">
+                <Form.Label>Titolo:</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="title"
+                  value={post.title}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
 
-            <Form.Group className="mb-3" controlId="category">
-              <Form.Label>Luogo:</Form.Label>
-              <Form.Control
-                type="text"
-                name="category"
-                value={post.category}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
+              <Form.Group className="mb-3" controlId="category">
+                <Form.Label>Luogo:</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="category"
+                  value={post.category}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
 
-            <Form.Group className="mb-3" controlId="content">
-              <Form.Label>Contenuto:</Form.Label>
-              <Form.Control
-                as="textarea"
-                name="content"
-                value={post.content}
-                onChange={handleChange}
-                required
-                rows={6}
-              />
-            </Form.Group>
+              <Form.Group className="mb-3" controlId="content">
+                <Form.Label>Contenuto:</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  name="content"
+                  value={post.content}
+                  onChange={handleChange}
+                  required
+                  rows={6}
+                />
+              </Form.Group>
 
-            <Form.Group className="mb-3" controlId="cover">
-              <Form.Label>Immagine di copertina:</Form.Label>
-              <Form.Control
-                type="file"
-                name="cover"
-                onChange={handleFileChange}
-                required
-              />
-            </Form.Group>
+              <Form.Group className="mb-3" controlId="cover">
+                <Form.Label>Immagine di copertina:</Form.Label>
+                <Form.Control
+                  type="file"
+                  name="cover"
+                  onChange={handleFileChange}
+                  required
+                />
+              </Form.Group>
 
-            <Form.Group className="mb-3" controlId="readTimeValue">
-              <Form.Label>Tempo di lettura (minutes):</Form.Label>
-              <Form.Control
-                type="number"
-                min="1"
-                name="readTimeValue"
-                value={post.readTime.value}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
+              <Form.Group className="mb-3" controlId="readTimeValue">
+                <Form.Label>Tempo di lettura (minutes):</Form.Label>
+                <Form.Control
+                  type="number"
+                  min="1"
+                  name="readTimeValue"
+                  value={post.readTime.value}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
 
-            <Form.Group className="mb-3" controlId="author">
-              <Form.Label>Author Email:</Form.Label>
-              <Form.Control
-                type="email"
-                name="author"
-                value={post.author}
-                readOnly
-                required
-              />
-            </Form.Group>
+              <Form.Group className="mb-3" controlId="author">
+                <Form.Label>Author Email:</Form.Label>
+                <Form.Control
+                  type="email"
+                  name="author"
+                  value={post.author}
+                  readOnly
+                  required
+                />
+              </Form.Group>
 
-            {createdMessage && (
-              <Alert variant="success" className="text-center">
-                Post created successfully!
-              </Alert>
-            )}
+              {createdMessage && (
+                <Alert variant="success" className="text-center">
+                  Post created successfully!
+                </Alert>
+              )}
 
-            <Button type="submit" className="save-button w-50">
-              Save Post
-            </Button>
-          </Form>
-        </Card.Body>
-      </Card>
+              <Button type="submit" className="save-button w-50">
+                Save Post
+              </Button>
+            </Form>
+          </Card.Body>
+        </Card>
+      </div>
     </div>
   );
 }

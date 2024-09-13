@@ -31,7 +31,7 @@ const NavbarComponent = () => {
           Beach App
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)} />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" className='ms-lg-4'>
           <Nav className="me-auto left-nav">
             <Nav.Link as={Link} to="/" onClick={handleLinkClick}>Home</Nav.Link>
             {loggedIn && <>

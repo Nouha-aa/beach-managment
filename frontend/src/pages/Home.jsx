@@ -100,11 +100,11 @@ export default function Home({ search, viewMyPosts }) {
   return (
     <>
     <div className="relative overflow-hidden bg-light min-vh-100">
-      <div className="position-absolute w-100 h-100" style={{ zIndex: 0 }}>
-      </div>
+      {/* <div className="position-absolute w-100 h-100" style={{ zIndex: 0 }}>
+      </div> */}
       <Hero />
       <Container className="d-flex flex-column align-items-center justify-content-center p-4" style={{ zIndex: 10 }}>
-        <h3 className="mb-6 text-4xl font-extrabold text-dark shadow-lg">{viewMyPosts ? "My Posts" : "Eventi in zona"}</h3>
+        <h3 className="mb-6 text-4xl font-extrabold text-dark mb-3">{viewMyPosts ? "My Posts" : "Eventi in zona"}</h3>
         {notification && (
           <Notification message={notification} onClose={() => setNotification(null)} />
         )}

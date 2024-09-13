@@ -30,7 +30,7 @@ function Login() {
   return (
     <div className="login-container">
       <Container className="d-flex justify-content-center align-items-center min-vh-100">
-        <div className="login-card w-100" style={{ maxWidth: '400px' }}>
+        <div className="login-card card w-100" style={{ maxWidth: '400px' }}>
           <h2 className="header-text text-center mb-4">Login</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           {success && <Alert variant="success">{success}</Alert>}

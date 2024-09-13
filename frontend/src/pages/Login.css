@@ -1,7 +1,8 @@
 .login-container {
-    background-image: url('/images/beach-wallpaper.jpeg');
-    background-size: cover;
-    background-position: center;
+    /* background-image: url('/images/beach-wallpaper.jpeg'); */
+    /* background-size: cover;
+    background-position: center; */
+    background-color: rgba(221, 153, 63, 0.396);
     height: 100vh;
     display: flex;
     justify-content: center;

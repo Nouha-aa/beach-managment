@@ -16,11 +16,11 @@
     background-color: #c6850c;
 }
 
-.card {
+.card.post-card {
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 8px 15px 10px rgba(62, 47, 3, 0.175);
-    margin-bottom: 300px;
+    /* margin-bottom: 300px; */
   }
 
 .testo-card {

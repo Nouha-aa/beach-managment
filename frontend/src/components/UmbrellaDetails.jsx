@@ -134,7 +134,7 @@ const UmbrellaDetails = ({ umbrella, onClose }) => {
             />
             <label className="form-check-label"><strong>Accessibile:</strong></label>
           </div>
-          <div className="d-flex justify-content-between mt-4">
+          <div className="d-flex justify-content-between my-4">
             <button className="btn btn-success" onClick={handleSaveClick}>Salva</button>
             <button className="btn btn-secondary" onClick={handleCancelClick}>Annulla</button>
           </div>
@@ -146,7 +146,7 @@ const UmbrellaDetails = ({ umbrella, onClose }) => {
           <p><strong>Posizione:</strong> {umbrella.row}</p>
           <p><strong>Prezzo:</strong> €{formData.price}</p>
           <p><strong>Accessibile:</strong> {formData.isAccessible ? 'Sì' : 'No'}</p>
-          <div className="d-flex justify-content-between mt-4">
+          <div className="d-flex justify-content-between my-4">
             <button className="btn btn-primary" onClick={handleEditClick}>Modifica</button>
             <button className="btn btn-danger" onClick={handleDeleteClick}>Elimina</button>
           </div>

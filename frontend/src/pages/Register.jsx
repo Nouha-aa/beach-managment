@@ -49,7 +49,7 @@ function Register() {
     <div className="register-page">
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-md-6">
+          <div className="col-md-12">
             <div className="card register-card p-4 mb-4">
               <h2 className="title text-center mb-4">Register</h2>
               <form onSubmit={handleSubmit}>
