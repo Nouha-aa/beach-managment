@@ -25,29 +25,22 @@ const Hero = () => {
         interval={3500} // Cambio immagine ogni 3 secondi
         className="hover-carousel"
       >
-        <Carousel.Item style={{ height: '60vh', backgroundImage: 'url(https://via.placeholder.com/1600x900)' }}>
+        <Carousel.Item style={{ height: '60vh', backgroundImage: 'url(../images/beachhh.jpg)' }}>
           <Carousel.Caption>
-            <h1>bla bla</h1>
+            <h1>Soluzioni Digitali per la Tua Spiaggia</h1>
+            <h4>Un’unica piattaforma per gestire prenotazioni, eventi e servizi della tua spiaggia. Ottimizza il lavoro e migliora l’esperienza dei tuoi ospiti.</h4>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item style={{ height: '60vh', backgroundImage: 'url(https://via.placeholder.com/1600x900)' }}>
+        <Carousel.Item style={{ height: '60vh', backgroundImage: 'url(../images/rimini.jpg)' }}>
           <Carousel.Caption>
-            <h1>una cosa</h1>
+            <h1>Eventi Esclusivi in Spiaggia</h1>
+            <h4>Scopri e partecipa agli eventi più emozionanti sul litorale. Da feste serali a tornei sportivi, vivi l’estate al massimo!</h4>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item style={{ height: '60vh', backgroundImage: 'url(https://via.placeholder.com/1600x900)' }}>
+        <Carousel.Item style={{ height: '60vh', backgroundImage: 'url(../images/tramonto.jpg)' }}>
           <Carousel.Caption>
-            <h1>una cosa</h1>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item style={{ height: '60vh', backgroundImage: 'url(https://via.placeholder.com/1600x900)' }}>
-          <Carousel.Caption>
-            <h1>una cosa</h1>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item style={{ height: '60vh', backgroundImage: 'url(https://via.placeholder.com/1600x900)' }}>
-          <Carousel.Caption>
-            <h1>una cosa</h1>
+            <h1>La Tua Spiaggia, Sempre Organizzata</h1>
+            <h4>Gestisci ombrelloni, lettini ed eventi in modo semplice e professionale. Offri ai tuoi clienti un'esperienza personalizzata e senza stress!</h4>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

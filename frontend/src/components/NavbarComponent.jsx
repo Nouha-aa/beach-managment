@@ -28,7 +28,7 @@ const NavbarComponent = () => {
     <Navbar expand="lg" expanded={expanded} className="custom-navbar">
       <Container>
         <Navbar.Brand as={Link} to="/" onClick={handleLinkClick} className="mx-auto navbar-center">
-          Beach App
+          <img src="/images/logo.png" alt="Logo" className="logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)} />
         <Navbar.Collapse id="basic-navbar-nav" className='ms-lg-4'>
